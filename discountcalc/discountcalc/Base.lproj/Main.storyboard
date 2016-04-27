@@ -126,6 +126,9 @@
                                 <rect key="frame" x="15" y="370" width="290" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="割引％を入力する"/>
+                                <connections>
+                                    <segue destination="K2t-JZ-VZm" kind="modal" id="cZW-tq-Rh7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -251,6 +254,9 @@
                                 <rect key="frame" x="16" y="370" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="計算する"/>
+                                <connections>
+                                    <segue destination="DKc-bN-M9x" kind="modal" id="0gc-Ac-w4f"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,6 +294,9 @@
                                 <rect key="frame" x="16" y="94" width="288" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="他の計算もする"/>
+                                <connections>
+                                    <segue destination="S3d-Oe-04H" kind="unwind" unwindAction="restart:" id="Sje-IO-94u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -297,6 +306,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLj-O6-5Xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="S3d-Oe-04H" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="846" y="321"/>
         </scene>

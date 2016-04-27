@@ -100,6 +100,16 @@ class ViewController: UIViewController {
             priceField.text = "\(price)"
         }
     }
+    
+    /**
+     最後の画面から戻ってきた時の処理
+     
+     （restartというsegueが起こった時に起こるイベント）
+     - parameter segue:遷移
+    */
+    @IBAction func restart(segue: UIStoryboardSegue){
+        priceField.text = "0"
+    }
 
 }
 
