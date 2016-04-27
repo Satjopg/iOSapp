@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="459" y="321"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="sSL-QL-dIE">
             <objects>
-                <viewController id="DKc-bN-M9x" sceneMemberID="viewController">
+                <viewController id="DKc-bN-M9x" customClass="ResultViewController" customModule="discountcalc" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="scu-e4-be6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,6 +292,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultField" destination="p7n-3h-ALR" id="vFZ-LJ-Le5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLj-O6-5Xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

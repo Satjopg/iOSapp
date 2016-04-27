@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		609324AC1CD0E844005E225A /* PercentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609324AB1CD0E844005E225A /* PercentViewController.swift */; };
+		609324AE1CD0EBB1005E225A /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609324AD1CD0EBB1005E225A /* ResultViewController.swift */; };
 		609A216E1CD060DA00C66DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A216D1CD060DA00C66DB6 /* AppDelegate.swift */; };
 		609A21701CD060DA00C66DB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A216F1CD060DA00C66DB6 /* ViewController.swift */; };
 		609A21731CD060DA00C66DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609A21711CD060DA00C66DB6 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		609324AB1CD0E844005E225A /* PercentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PercentViewController.swift; sourceTree = "<group>"; };
+		609324AD1CD0EBB1005E225A /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		609A216A1CD060DA00C66DB6 /* discountcalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = discountcalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609A216D1CD060DA00C66DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		609A216F1CD060DA00C66DB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				609A216D1CD060DA00C66DB6 /* AppDelegate.swift */,
 				609A216F1CD060DA00C66DB6 /* ViewController.swift */,
 				609324AB1CD0E844005E225A /* PercentViewController.swift */,
+				609324AD1CD0EBB1005E225A /* ResultViewController.swift */,
 				609A21711CD060DA00C66DB6 /* Main.storyboard */,
 				609A21741CD060DA00C66DB6 /* Assets.xcassets */,
 				609A21761CD060DA00C66DB6 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				609A21701CD060DA00C66DB6 /* ViewController.swift in Sources */,
 				609A216E1CD060DA00C66DB6 /* AppDelegate.swift in Sources */,
 				609324AC1CD0E844005E225A /* PercentViewController.swift in Sources */,
+				609324AE1CD0EBB1005E225A /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
