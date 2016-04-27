@@ -100,6 +100,21 @@ class ViewController: UIViewController {
             priceField.text = "\(price)"
         }
     }
+    /**
+     画面遷移した時の値受け渡しの処理
+     - parameter segue:画面遷移先などの情報を持つ
+     - parameter sender:画面遷移が元になったオブジェクト
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // 次の画面の情報を取り出す
+        // UIViewControllerのサブクラスなのでダウンキャストして型を揃える
+        let viewController = segue.destinationViewController as! PercentViewController
+        // !はnilでないことを明示(アンラップ処理)
+        if let price = Int(priceField.text!){
+            // 値の受け渡し
+            viewController.price = price
+        }
+    }
     
     /**
      最後の画面から戻ってきた時の処理

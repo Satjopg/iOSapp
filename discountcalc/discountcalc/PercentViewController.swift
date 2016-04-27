@@ -81,4 +81,18 @@ class PercentViewController: UIViewController {
             percentField.text = "\(price)"
         }
     }
+    
+    /**
+     画面遷移時の値の受け渡し処理
+    */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // 次の画面を取り出す
+        let viewController = segue.destinationViewController as! ResultViewController
+        // nilでないことは前の遷移で確認されているのでそのまま受け渡す
+        viewController.price = price
+        // nilでないことを確認してから値を受け渡す
+        if let percent = Int(percentField.text!) {
+            viewController.percent = percent
+        }
+    }
 }
