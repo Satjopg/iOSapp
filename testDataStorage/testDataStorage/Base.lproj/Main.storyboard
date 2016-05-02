@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testDataStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Ex-YH-eBO"/>
+                        <viewControllerLayoutGuide type="bottom" id="gKq-fW-gfu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zuP-t7-z4p">
+                                <rect key="frame" x="64" y="216" width="479" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D3-DB-YoY">
+                                <rect key="frame" x="67" y="285" width="472" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="savedataButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bBw-2Q-0JP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="zuP-t7-z4p" secondAttribute="trailing" constant="37" id="2h7-8v-fso"/>
+                            <constraint firstItem="zuP-t7-z4p" firstAttribute="centerX" secondItem="8D3-DB-YoY" secondAttribute="centerX" id="OWw-tu-ABZ"/>
+                            <constraint firstItem="8D3-DB-YoY" firstAttribute="top" secondItem="zuP-t7-z4p" secondAttribute="bottom" constant="39" id="c2X-Ft-Y89"/>
+                            <constraint firstItem="8D3-DB-YoY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="ofU-XZ-dTS"/>
+                            <constraint firstItem="8D3-DB-YoY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sJv-b5-tIq"/>
+                            <constraint firstItem="zuP-t7-z4p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44" id="tti-pz-Fnv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="zuP-t7-z4p" id="2sg-u7-2av"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="321"/>
+        </scene>
+    </scenes>
+</document>
