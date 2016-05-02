@@ -6,4 +6,12 @@
 //  Copyright © 2016年 Satoru Murakami. All rights reserved.
 //
 
+/*
+    簡単オリジナルクラスの定義
+*/
+
 import Foundation
+
+class MyData {
+    var value : String?
+}
