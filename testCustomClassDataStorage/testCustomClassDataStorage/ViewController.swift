@@ -22,9 +22,24 @@ class ViewController: UIViewController {
         let userdefaults = NSUserDefaults.standardUserDefaults()
         let data =  MyData()
         data.value = "test"
-        userdefaults.setObject(data, forKey: "data")
+        
+        // シリアライズ処理
+        let archiveData = NSKeyedArchiver.archivedDataWithRootObject(data)
+        // シリアライズしたデータをNSUserDefaultsに保存
+        userdefaults.setObject(archiveData, forKey: "data")
+        // 同期
         userdefaults.synchronize()
         
+        // デシリアライズ処理
+        // シリアライズしたデータを取得
+        if let storedData = userdefaults.objectForKey("data") as? NSData{
+               // デシリアライズする
+            if let unarchiveData = NSKeyedUnarchiver.unarchiveObjectWithData(storedData) as? MyData{
+                if let value = unarchiveData.value {
+                    print("デシリアライズデータ" + value)
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
