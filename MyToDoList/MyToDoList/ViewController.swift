@@ -132,8 +132,8 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
             todo.todoDone = true
         }
         // セルの状態を変更（再読み込み）
-        // withRowAnimation: UITableViewRowAnimation.Fade: アニメーションを発生）
-        tableview.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        // withRowAnimation: (UITableViewRowAnimation).Fade: アニメーションを発生）
+        tableview.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         
         // MyToDoをNSDataにシリアライズする
         let data:NSData = NSKeyedArchiver.archivedDataWithRootObject(self.todoList)
@@ -144,6 +144,27 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         userDefaults.synchronize()
     }
     
+    // セルが編集可能かどうかを返す
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // ToDoリストから削除
+            self.todoList.removeAtIndex(indexPath.row)
+            // セルの削除
+            self.tableview.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            // MyToDoをNSDataにシリアライズする
+            let data:NSData = NSKeyedArchiver.archivedDataWithRootObject(self.todoList)
+            
+            // データを永続的に利用するために保存する
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.setObject(data, forKey: "todoList")
+            userDefaults.synchronize()
+
+        }
+    }
     
     /**
      MyToDo
