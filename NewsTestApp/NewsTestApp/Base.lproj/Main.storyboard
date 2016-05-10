@@ -39,6 +39,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="lUn-Ke-AtK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Bd1-1y-wb3"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -49,6 +53,9 @@
                             <constraint firstItem="AvK-bn-dpl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yxH-qQ-PsV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="AvK-bn-dpl" id="1qG-kp-rbi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
