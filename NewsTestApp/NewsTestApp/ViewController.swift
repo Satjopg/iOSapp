@@ -33,6 +33,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func refreshButton(sender: UIBarButtonItem) {
+        viewDidLoad()
+    }
     // データを保持する
     var items:[Item] = [Item]()
     
