@@ -23,8 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         if let newsURL = getURL {
-            print("OK")
-            var parser:NSXMLParser! = NSXMLParser(contentsOfURL: newsURL)
+            let parser:NSXMLParser! = NSXMLParser(contentsOfURL: newsURL)
             parser!.delegate = self;
             parser!.parse()
         }
@@ -82,10 +81,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if items.count > 0 {
-            var lastItem = items[items.count-1]
+            let lastItem = items[items.count-1]
             if let currentElementName = currentElementName {
                 if currentElementName == titleElementName {
-                    var tmpString : String? = lastItem.title
+                    let tmpString : String? = lastItem.title
                     lastItem.title = (tmpString != nil) ? tmpString! + string : string
                 } else if currentElementName == linkElementName {
                     lastItem.url = string
