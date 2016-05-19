@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nnb-Dd-M5l">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--乗換案内-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrainTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="zRh-Nn-3gx"/>
+                        <viewControllerLayoutGuide type="bottom" id="jPk-4S-kOw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出発" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="611-5p-aVa">
-                                <rect key="frame" x="20" y="78" width="273" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出発" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="611-5p-aVa">
+                                <rect key="frame" x="24" y="99" width="545" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mEY-WB-5mV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="到着" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-yj-437">
-                                <rect key="frame" x="20" y="148" width="273" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="到着" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-yj-437">
+                                <rect key="frame" x="24" y="174" width="545" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="msX-9A-nVC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-pl-2ox">
-                                <rect key="frame" x="19" y="294" width="275" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-pl-2ox">
+                                <rect key="frame" x="23" y="320" width="547" height="82"/>
                                 <color key="backgroundColor" red="1" green="0.74148809095706159" blue="0.52002919343233334" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="検索">
@@ -38,17 +45,39 @@
                                     <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vLO-Mi-a3L"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZS-Yi-fcI">
-                                <rect key="frame" x="20" y="218" width="273" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZS-Yi-fcI">
+                                <rect key="frame" x="24" y="243" width="545" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="oab-pr-LLd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="時刻">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="timeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YbN-SU-fai"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.9786281086387435" green="0.9786281086387435" blue="0.9786281086387435" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99271924083769636" green="0.99271924083769636" blue="0.99271924083769636" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wBf-yj-437" firstAttribute="leading" secondItem="KZS-Yi-fcI" secondAttribute="leading" id="4kq-md-dUH"/>
+                            <constraint firstItem="611-5p-aVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="4pa-7N-euI"/>
+                            <constraint firstItem="fnf-pl-2ox" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="50z-pz-jlk"/>
+                            <constraint firstItem="611-5p-aVa" firstAttribute="trailing" secondItem="wBf-yj-437" secondAttribute="trailing" id="BRm-0x-xNr"/>
+                            <constraint firstItem="611-5p-aVa" firstAttribute="leading" secondItem="wBf-yj-437" secondAttribute="leading" id="PWC-pr-ROB"/>
+                            <constraint firstItem="jPk-4S-kOw" firstAttribute="top" secondItem="fnf-pl-2ox" secondAttribute="bottom" constant="198" id="Plw-YL-SZJ"/>
+                            <constraint firstItem="611-5p-aVa" firstAttribute="top" secondItem="zRh-Nn-3gx" secondAttribute="bottom" constant="35" id="PtA-VA-juM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fnf-pl-2ox" secondAttribute="trailing" constant="10" id="bpj-Mm-NJC"/>
+                            <constraint firstItem="KZS-Yi-fcI" firstAttribute="centerX" secondItem="fnf-pl-2ox" secondAttribute="centerX" id="gdn-LQ-HZH"/>
+                            <constraint firstItem="wBf-yj-437" firstAttribute="trailing" secondItem="KZS-Yi-fcI" secondAttribute="trailing" id="hm5-1M-0Jc"/>
+                            <constraint firstItem="fnf-pl-2ox" firstAttribute="top" secondItem="KZS-Yi-fcI" secondAttribute="bottom" constant="47" id="j0I-Ex-qJv"/>
+                            <constraint firstItem="wBf-yj-437" firstAttribute="top" secondItem="611-5p-aVa" secondAttribute="bottom" constant="45" id="oby-5L-2t6"/>
+                            <constraint firstItem="KZS-Yi-fcI" firstAttribute="top" secondItem="wBf-yj-437" secondAttribute="bottom" constant="39" id="zMD-P4-IBR"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="乗換案内" id="S1H-X8-rKk"/>
                     <connections>
                         <outlet property="endField" destination="wBf-yj-437" id="l5h-pM-ENq"/>
                         <outlet property="startField" destination="611-5p-aVa" id="XYQ-xc-nti"/>
@@ -56,7 +85,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="304"/>
+            <point key="canvasLocation" x="1018" y="321"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nx9-pE-EyF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nnb-Dd-M5l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eDK-TE-Zyu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="35h-Md-U67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yw3-Fj-EOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286.875" y="321.12676056338017"/>
         </scene>
     </scenes>
 </document>

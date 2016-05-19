@@ -24,7 +24,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+//  時刻ボタンを押した時の処理
+    @IBAction func timeButton(sender: AnyObject) {
+        
+        
+    }
 //  検索ボタンを押した時の処理
     @IBAction func searchButton(sender: AnyObject) {
         if let start = startField.text {
