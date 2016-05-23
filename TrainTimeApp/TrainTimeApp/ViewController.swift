@@ -15,20 +15,26 @@ class ViewController: UIViewController {
 //  到着駅の入力欄
     @IBOutlet weak var endField: UITextField!
     
+//  時刻の入力欄
+    @IBOutlet weak var timeField: UITextField!
+    
+    
+    let myDatePicker:UIDatePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//      時刻の入力欄を変更する
+        myDatePicker.addTarget(self, action: "changeDate", forControlEvents: UIControlEvents.ValueChanged)
+        myDatePicker.datePickerMode = UIDatePickerMode.DateAndTime
+        timeField.inputView = myDatePicker
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//  時刻ボタンを押した時の処理
-    @IBAction func timeButton(sender: AnyObject) {
-        
-        
-    }
+
 //  検索ボタンを押した時の処理
     @IBAction func searchButton(sender: AnyObject) {
         if let start = startField.text {
