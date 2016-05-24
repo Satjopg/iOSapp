@@ -26,21 +26,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 //      時刻の入力方式を変更する
-        myDatePicker.addTarget(self, action: "changedDateEvent:", forControlEvents: UIControlEvents.ValueChanged)
+        myDatePicker.addTarget(self, action: #selector(ViewController.changedDateEvent), forControlEvents: UIControlEvents.ValueChanged)
         myDatePicker.datePickerMode = UIDatePickerMode.DateAndTime
         myDatePicker.locale = NSLocale(localeIdentifier: "ja_JP")
         myDatePicker.setDate(NSDate(), animated: true)
         timeField.inputView = myDatePicker
         
-        // UIToolBarの設定
+//      UIToolBarの設定
         toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         toolBar.barStyle = .BlackTranslucent
         toolBar.tintColor = UIColor.whiteColor()
         toolBar.backgroundColor = UIColor.blackColor()
         
-        let toolBarBtn = UIBarButtonItem(title: "完了", style: .Bordered, target: self, action: "tappedToolBarBtn:")
-        let toolBarBtnToday = UIBarButtonItem(title: "今日", style: .Bordered, target: self, action: "tappedToolBarBtnToday:")
+        let toolBarBtn = UIBarButtonItem(title: "完了", style:.Plain, target: self, action: #selector(ViewController.tappedToolBarBtn))
+        let toolBarBtnToday = UIBarButtonItem(title: "今日", style:.Plain, target: self, action: #selector(ViewController.tappedToolBarBtnToday))
         
         toolBarBtn.tag = 1
         toolBar.items = [toolBarBtn, toolBarBtnToday]
@@ -61,13 +61,19 @@ class ViewController: UIViewController {
         if let end = endField.text {
             print(end)
         }
+        
+        if let time = timeField.text {
+            print(time)
+        }
     }
     
     internal func changedDateEvent(sender: UIDatePicker){
         
         // フォーマットを生成.
         let myDateFormatter: NSDateFormatter = NSDateFormatter()
+        myDateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
         myDateFormatter.timeStyle = .ShortStyle
+        myDateFormatter.dateStyle = .MediumStyle
         
         // 日付をフォーマットに則って取得.
         let mySelectedDate: NSString = myDateFormatter.stringFromDate(sender.date)
