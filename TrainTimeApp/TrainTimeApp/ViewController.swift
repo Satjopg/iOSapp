@@ -18,8 +18,10 @@ class ViewController: UIViewController {
 //  時刻の入力欄
     @IBOutlet weak var timeField: UITextField!
     
+//  日付と時刻を入力するためのUIDatePicker
     let myDatePicker:UIDatePicker = UIDatePicker()
     
+//  DatePickerの動作を補助するためのツールバー
     var toolBar:UIToolbar = UIToolbar()
     
     override func viewDidLoad() {
@@ -37,10 +39,10 @@ class ViewController: UIViewController {
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         toolBar.barStyle = .BlackTranslucent
         toolBar.tintColor = UIColor.whiteColor()
-        toolBar.backgroundColor = UIColor.blackColor()
+        toolBar.backgroundColor = UIColor.clearColor()
         
         let toolBarBtn = UIBarButtonItem(title: "完了", style:.Plain, target: self, action: #selector(ViewController.tappedToolBarBtn))
-        let toolBarBtnToday = UIBarButtonItem(title: "今日", style:.Plain, target: self, action: #selector(ViewController.tappedToolBarBtnToday))
+        let toolBarBtnToday = UIBarButtonItem(title: "現在時刻", style:.Plain, target: self, action: #selector(ViewController.tappedToolBarBtnToday))
         
         toolBarBtn.tag = 1
         toolBar.items = [toolBarBtn, toolBarBtnToday]
@@ -67,25 +69,27 @@ class ViewController: UIViewController {
         }
     }
     
+//  DatePickerで値を動かした時に起こる動作
     internal func changedDateEvent(sender: UIDatePicker){
+        let calender:NSCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        let compornents:NSDateComponents = calender.components([.Year, .Month, .Day, .Weekday, .Hour, .Minute], fromDate: sender.date)
         
-        // フォーマットを生成.
-        let myDateFormatter: NSDateFormatter = NSDateFormatter()
+        let weekday:Int = compornents.weekday
+        
+        let myDateFormatter:NSDateFormatter = NSDateFormatter()
         myDateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
-        myDateFormatter.timeStyle = .ShortStyle
-        myDateFormatter.dateStyle = .MediumStyle
+        myDateFormatter.dateFormat = "MM月dd日(\(myDateFormatter.shortWeekdaySymbols[weekday-1])) HH時mm分"
         
-        // 日付をフォーマットに則って取得.
-        let mySelectedDate: NSString = myDateFormatter.stringFromDate(sender.date)
+        let mySelectedDate:NSString = myDateFormatter.stringFromDate(sender.date)
         self.timeField.text = mySelectedDate as String
     }
-    
+
     // 「完了」を押すと閉じる
     func tappedToolBarBtn(sender: UIBarButtonItem) {
         self.timeField.resignFirstResponder()
     }
     
-    // 「今日」を押すと今日の日付をセットする
+    // 「現在時刻」を押すと現在時刻をセットする
     func tappedToolBarBtnToday(sender: UIBarButtonItem) {
         myDatePicker.date = NSDate()
         changedDateEvent(myDatePicker)
