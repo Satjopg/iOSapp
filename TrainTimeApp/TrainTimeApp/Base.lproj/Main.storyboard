@@ -1,76 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="nnb-Dd-M5l">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="nnb-Dd-M5l">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--乗換案内-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrainTimeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6el-wz-der"/>
-                        <viewControllerLayoutGuide type="bottom" id="CXD-hx-gJ2"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出発" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="611-5p-aVa">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="出発" textAlignment="natural" minimumFontSize="17" id="611-5p-aVa">
                                 <rect key="frame" x="20" y="99" width="273" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PUe-pT-Tef"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="到着" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBf-yj-437">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="到着" textAlignment="natural" minimumFontSize="17" id="wBf-yj-437">
                                 <rect key="frame" x="20" y="174" width="273" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DAz-97-8e1"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnf-pl-2ox">
-                                <rect key="frame" x="19" y="320" width="275" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fnf-pl-2ox">
+                                <rect key="frame" x="34" y="320" width="244" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.74148809095706159" blue="0.52002919343233334" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <state key="normal" title="検索">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vLO-Mi-a3L"/>
-                                    <segue destination="9XJ-uy-odX" kind="modal" id="jTt-0d-N78"/>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vd-4g-ISF"/>
+                                    <segue destination="0bR-sl-492" kind="push" identifier="goResult" id="mNd-7p-gF7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="時刻" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kl5-RZ-xpj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="時刻" textAlignment="natural" minimumFontSize="17" id="kl5-RZ-xpj">
                                 <rect key="frame" x="20" y="243" width="273" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="u3d-mA-Wmv"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94226521596858637" green="0.94226521596858637" blue="0.94226521596858637" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="CXD-hx-gJ2" firstAttribute="top" secondItem="fnf-pl-2ox" secondAttribute="bottom" constant="198" id="1sF-bn-5Oy"/>
-                            <constraint firstItem="kl5-RZ-xpj" firstAttribute="centerX" secondItem="fnf-pl-2ox" secondAttribute="centerX" id="9eE-UT-dRT"/>
-                            <constraint firstItem="wBf-yj-437" firstAttribute="trailing" secondItem="kl5-RZ-xpj" secondAttribute="trailing" id="9mg-fx-xRv"/>
-                            <constraint firstItem="wBf-yj-437" firstAttribute="leading" secondItem="kl5-RZ-xpj" secondAttribute="leading" id="DpC-zg-Uma"/>
-                            <constraint firstItem="kl5-RZ-xpj" firstAttribute="top" secondItem="wBf-yj-437" secondAttribute="bottom" constant="39" id="OgS-pA-bdT"/>
-                            <constraint firstItem="fnf-pl-2ox" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="UHt-8N-Ojc"/>
-                            <constraint firstItem="fnf-pl-2ox" firstAttribute="top" secondItem="kl5-RZ-xpj" secondAttribute="bottom" constant="47" id="Ust-ga-DI4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fnf-pl-2ox" secondAttribute="trailing" constant="10" id="ZBA-tg-27C"/>
-                            <constraint firstItem="wBf-yj-437" firstAttribute="top" secondItem="611-5p-aVa" secondAttribute="bottom" constant="45" id="cNY-VN-IZo"/>
-                            <constraint firstItem="611-5p-aVa" firstAttribute="top" secondItem="6el-wz-der" secondAttribute="bottom" constant="35" id="esw-Gj-bww"/>
-                            <constraint firstItem="611-5p-aVa" firstAttribute="leading" secondItem="wBf-yj-437" secondAttribute="leading" id="g13-2y-9JX"/>
-                            <constraint firstItem="611-5p-aVa" firstAttribute="trailing" secondItem="wBf-yj-437" secondAttribute="trailing" id="nOz-QV-svX"/>
-                            <constraint firstItem="611-5p-aVa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="yq3-iC-dDL"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="乗換案内" id="S1H-X8-rKk"/>
                     <connections>
@@ -87,26 +62,16 @@
         <scene sceneID="hbz-DW-3Qx">
             <objects>
                 <viewController id="0bR-sl-492" customClass="ResultViewController" customModule="TrainTimeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I7i-fq-b0I"/>
-                        <viewControllerLayoutGuide type="bottom" id="8nC-ho-tRw"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="udV-Ty-vUg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96269633507853403" green="0.96269633507853403" blue="0.96269633507853403" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="乗換案内" id="sEA-kU-82j">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="reply" id="UIw-md-xCL">
-                            <connections>
-                                <segue destination="nnb-Dd-M5l" kind="modal" id="GhL-lw-OaH"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="乗換案内" id="sEA-kU-82j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iry-zY-jXf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="1089"/>
+            <point key="canvasLocation" x="600" y="1052"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nx9-pE-EyF">
@@ -124,13 +89,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yw3-Fj-EOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="303.99999999999983"/>
+            <point key="canvasLocation" x="153" y="303.99999999999972"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p9v-OS-9QV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9XJ-uy-odX" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="DcV-eh-clv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1P-rd-wjK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,7 +108,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1v-ft-csq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="303"/>
+            <point key="canvasLocation" x="147" y="1052"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mNd-7p-gF7"/>
+    </inferredMetricsTieBreakers>
 </document>
