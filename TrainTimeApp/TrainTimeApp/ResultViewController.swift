@@ -9,10 +9,16 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    var start:String = ""
+    var end:String = ""
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(start)
+        print(end)
     }
     
     override func didReceiveMemoryWarning() {

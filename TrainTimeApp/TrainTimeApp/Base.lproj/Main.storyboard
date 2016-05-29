@@ -34,7 +34,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Vd-4g-ISF"/>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SqE-No-Hxn"/>
                                     <segue destination="0bR-sl-492" kind="push" identifier="goResult" id="mNd-7p-gF7"/>
                                 </connections>
                             </button>
@@ -50,6 +50,7 @@
                     <navigationItem key="navigationItem" title="乗換案内" id="S1H-X8-rKk"/>
                     <connections>
                         <outlet property="endField" destination="wBf-yj-437" id="l5h-pM-ENq"/>
+                        <outlet property="myButton" destination="fnf-pl-2ox" id="Vnt-C2-O09"/>
                         <outlet property="startField" destination="611-5p-aVa" id="XYQ-xc-nti"/>
                         <outlet property="timeField" destination="kl5-RZ-xpj" id="0f2-qK-1We"/>
                     </connections>

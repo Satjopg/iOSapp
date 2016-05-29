@@ -17,6 +17,9 @@ class ViewController: UIViewController {
 //  時刻の入力欄
     @IBOutlet weak var timeField: UITextField!
     
+//  検索ボタン
+    @IBOutlet weak var myButton: UIButton!
+    
 //  日付と時刻を入力するためのUIDatePicker
     let myDatePicker:UIDatePicker = UIDatePicker()
     
@@ -25,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
 //      時刻の入力方式を変更する
         myDatePicker.addTarget(self, action: #selector(ViewController.changedDateEvent), forControlEvents: UIControlEvents.ValueChanged)
         myDatePicker.datePickerMode = UIDatePickerMode.DateAndTime
@@ -58,27 +61,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-//  検索ボタンを押した時の処理
+//  検索ボタンの動作を表す関数
+//  動作自体は画面遷移なので中身のコードは不要
     @IBAction func searchButton(sender: AnyObject) {
-        /*
-         let alert:UIAlertController = UIAlertController(title: "alert", message: "入力箇所が足りません", preferredStyle: .Alert)
-        let defaultaction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alert.addAction(defaultaction)
-         */
-        if startField.text != nil {
-            print(startField.text)
-        } else {
-            print("Hello")
-        }
-        
-        if let end = endField.text {
-            print(end)
-        }
-        
-        if let time = timeField.text {
-            print(time)
-        }
     }
     
 //  DatePickerで値を動かした時に起こる動作
@@ -107,5 +92,39 @@ class ViewController: UIViewController {
         changedDateEvent(myDatePicker)
     }
     
+//  検索ボタンをおした時の処理
+//  次の画面に入力した文字列を受渡している
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//      遷移先の情報を取得
+        let viewController = segue.destinationViewController as! ResultViewController
+//      以下項目欄が空ならエラーメッセージを表示する
+//      そうでなければ、値を受け渡す
+        if self.startField.text != "" {
+            viewController.start = self.startField.text!
+        } else {
+            self.alertevent("出発")
+        }
+        if self.endField.text != "" {
+            viewController.end = self.endField.text!
+        } else {
+            self.alertevent("到着")
+        }
+    }
+    
+//  画面遷移時に入力項目が足りなかった時に表示する
+    func alertevent(sender:String){
+        
+        let am:String = sender + "が足りません"
+        
+        let alert:UIAlertController = UIAlertController(title: "Error!!", message: am, preferredStyle: .Alert)
+        let defaultaction = UIAlertAction(title: "OK", style: .Default){ (action) in
+            if let navCon = self.navigationController {
+                navCon.popViewControllerAnimated(true)
+            }
+        }
+        alert.addAction(defaultaction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
-
