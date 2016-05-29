@@ -26,7 +26,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fnf-pl-2ox">
-                                <rect key="frame" x="34" y="320" width="244" height="50"/>
+                                <rect key="frame" x="34" y="388" width="244" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.74148809095706159" blue="0.52002919343233334" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
@@ -44,6 +44,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電車" textAlignment="natural" minimumFontSize="17" id="fYz-bg-857">
+                                <rect key="frame" x="20" y="308" width="273" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.94226521596858637" green="0.94226521596858637" blue="0.94226521596858637" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -53,6 +59,7 @@
                         <outlet property="myButton" destination="fnf-pl-2ox" id="Vnt-C2-O09"/>
                         <outlet property="startField" destination="611-5p-aVa" id="XYQ-xc-nti"/>
                         <outlet property="timeField" destination="kl5-RZ-xpj" id="0f2-qK-1We"/>
+                        <outlet property="trainField" destination="fYz-bg-857" id="Ri0-OC-OjG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

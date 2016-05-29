@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 //  出発駅の入力欄
     @IBOutlet weak var startField: UITextField!
 //  到着駅の入力欄
@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     
 //  時刻の入力欄
     @IBOutlet weak var timeField: UITextField!
+    
+//  使用電車の入力欄
+    @IBOutlet weak var trainField: UITextField!
     
 //  検索ボタン
     @IBOutlet weak var myButton: UIButton!
@@ -26,6 +29,14 @@ class ViewController: UIViewController {
 //  DatePickerの動作を補助するためのツールバー
     var toolBar:UIToolbar = UIToolbar()
     
+//  路線を入力するためのUIPickerView
+    var trainPicker:UIPickerView = UIPickerView()
+    
+//  路線
+    let trainArr:NSArray = ["小田急線", "山手線"]
+    
+    
+//  画面表示時の動作
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -50,6 +61,12 @@ class ViewController: UIViewController {
         toolBar.items = [toolBarBtn, toolBarBtnToday]
         
         timeField.inputAccessoryView = toolBar
+        
+//      使用列車の入力方式
+        trainPicker.frame = CGRectMake(0,0,self.view.bounds.width, 250.0)
+        trainPicker.delegate = self
+        trainPicker.dataSource = self
+        trainField.inputView = trainPicker
         
 //      戻るボタンの設定（遷移先に表示される）
         let backbut = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
@@ -81,16 +98,42 @@ class ViewController: UIViewController {
         self.timeField.text = mySelectedDate as String
     }
 
-    // 「完了」を押すと閉じる
+// 「完了」を押すと閉じる(DatePickerのツールバー)
     func tappedToolBarBtn(sender: UIBarButtonItem) {
         self.timeField.resignFirstResponder()
     }
     
-    // 「現在時刻」を押すと現在時刻をセットする
+    // 「現在時刻」を押すと現在時刻をセットする(DatePickerのツールバー)
     func tappedToolBarBtnToday(sender: UIBarButtonItem) {
         myDatePicker.date = NSDate()
         changedDateEvent(myDatePicker)
     }
+    
+    
+///     以下UIPickerViewの設定
+    
+    //表示列
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    //表示個数
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return trainArr.count
+    }
+    
+    //表示内容
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String {
+        return trainArr[row] as! String
+    }
+    
+    //選択時
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
+///     おしまい
+    
     
 //  検索ボタンをおした時の処理
 //  次の画面に入力した文字列を受渡している
