@@ -32,8 +32,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 //  路線を入力するためのUIPickerView
     var trainPicker:UIPickerView = UIPickerView()
     
-//  路線
-    let trainArr:NSArray = ["小田急線", "山手線"]
+//  trainPickerのツールバー
+    var trainToolbar:UIToolbar = UIToolbar()
+    
+//  路線名
+    let trainArr:NSArray = ["","小田急線", "山手線"]
     
     
 //  画面表示時の動作
@@ -47,7 +50,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         myDatePicker.setDate(NSDate(), animated: true)
         timeField.inputView = myDatePicker
         
-//      UIToolBarの設定
+//      UIToolBarの設定(UIDatePickerのツールバーの設定)
         toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
         toolBar.barStyle = .BlackTranslucent
@@ -62,11 +65,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         timeField.inputAccessoryView = toolBar
         
-//      使用列車の入力方式
+//      UIPickerviewの設定(使用列車の入力方式)
         trainPicker.frame = CGRectMake(0,0,self.view.bounds.width, 250.0)
         trainPicker.delegate = self
         trainPicker.dataSource = self
         trainField.inputView = trainPicker
+        
+//      UIToolBarの設定（UIPickerViewのツールバー）
+        trainToolbar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+        trainToolbar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        trainToolbar.barStyle = .BlackTranslucent
+        trainToolbar.tintColor = UIColor.whiteColor()
+        trainToolbar.backgroundColor = UIColor.clearColor()
+        
+//      trainToolbarのボタンの設定,可視化
+        let trainbtn = UIBarButtonItem(title: "完了", style:.Plain, target:self, action:#selector(ViewController.completeView))
+        trainToolbar.items = [trainbtn]
+        trainField.inputAccessoryView = trainToolbar
         
 //      戻るボタンの設定（遷移先に表示される）
         let backbut = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
@@ -103,10 +118,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         self.timeField.resignFirstResponder()
     }
     
-    // 「現在時刻」を押すと現在時刻をセットする(DatePickerのツールバー)
+// 「現在時刻」を押すと現在時刻をセットする(DatePickerのツールバー)
     func tappedToolBarBtnToday(sender: UIBarButtonItem) {
         myDatePicker.date = NSDate()
         changedDateEvent(myDatePicker)
+    }
+    
+//  「完了」を押すと閉じる（UIPickerView）
+    func completeView(sender:UIBarButtonItem) {
+        self.trainField.resignFirstResponder()
     }
     
     
@@ -129,7 +149,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     //選択時
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+        self.trainField.text = trainArr[row] as! String
     }
     
 ///     おしまい
@@ -145,12 +165,24 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if self.startField.text != "" {
             viewController.start = self.startField.text!
         } else {
-            self.alertevent("出発")
+            self.alertevent("出発駅の記入")
         }
         if self.endField.text != "" {
             viewController.end = self.endField.text!
         } else {
-            self.alertevent("到着")
+            self.alertevent("到着駅の記入")
+        }
+        if self.trainField.text != "" {
+            switch trainField.text! {
+            case "小田急線":
+                viewController.train_code = "25001"
+            case "山手線":
+                viewController.train_code = "11302"
+            default:
+                self.alertevent("路線の選択")
+            }
+        } else {
+            self.alertevent("路線の選択")
         }
     }
     

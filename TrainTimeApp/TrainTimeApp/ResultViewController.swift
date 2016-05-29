@@ -12,6 +12,7 @@ class ResultViewController: UIViewController {
     
     var start:String = ""
     var end:String = ""
+    var train_code:String = ""
 
     
     override func viewDidLoad() {
@@ -19,6 +20,7 @@ class ResultViewController: UIViewController {
         
         print(start)
         print(end)
+        print(train_code)
     }
     
     override func didReceiveMemoryWarning() {
