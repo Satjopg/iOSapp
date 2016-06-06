@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60421C951CFD3E1400FA057D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60421C941CFD3E1400FA057D /* AppDelegate.swift */; };
+		60421C971CFD3E1400FA057D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60421C961CFD3E1400FA057D /* ViewController.swift */; };
+		60421C9A1CFD3E1400FA057D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60421C981CFD3E1400FA057D /* Main.storyboard */; };
+		60421C9C1CFD3E1400FA057D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60421C9B1CFD3E1400FA057D /* Assets.xcassets */; };
+		60421C9F1CFD3E1400FA057D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60421C9D1CFD3E1400FA057D /* LaunchScreen.storyboard */; };
+		60421CA81CFD3FFD00FA057D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60421CA61CFD3FFD00FA057D /* Alamofire.framework */; };
+		60421CA91CFD3FFD00FA057D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60421CA71CFD3FFD00FA057D /* SwiftyJSON.framework */; };
+		60421CAE1D0287D800FA057D /* QiitaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60421CAD1D0287D800FA057D /* QiitaData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		60421C911CFD3E1400FA057D /* QiitaTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiitaTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60421C941CFD3E1400FA057D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		60421C961CFD3E1400FA057D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60421C991CFD3E1400FA057D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60421C9B1CFD3E1400FA057D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60421C9E1CFD3E1400FA057D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60421CA01CFD3E1400FA057D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60421CA61CFD3FFD00FA057D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		60421CA71CFD3FFD00FA057D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		60421CAD1D0287D800FA057D /* QiitaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60421C8E1CFD3E1400FA057D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60421CA81CFD3FFD00FA057D /* Alamofire.framework in Frameworks */,
+				60421CA91CFD3FFD00FA057D /* SwiftyJSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60421C881CFD3E1400FA057D = {
+			isa = PBXGroup;
+			children = (
+				60421CA61CFD3FFD00FA057D /* Alamofire.framework */,
+				60421CA71CFD3FFD00FA057D /* SwiftyJSON.framework */,
+				60421C931CFD3E1400FA057D /* QiitaTestApp */,
+				60421C921CFD3E1400FA057D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		60421C921CFD3E1400FA057D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60421C911CFD3E1400FA057D /* QiitaTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60421C931CFD3E1400FA057D /* QiitaTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				60421C941CFD3E1400FA057D /* AppDelegate.swift */,
+				60421C961CFD3E1400FA057D /* ViewController.swift */,
+				60421CAD1D0287D800FA057D /* QiitaData.swift */,
+				60421C981CFD3E1400FA057D /* Main.storyboard */,
+				60421C9B1CFD3E1400FA057D /* Assets.xcassets */,
+				60421C9D1CFD3E1400FA057D /* LaunchScreen.storyboard */,
+				60421CA01CFD3E1400FA057D /* Info.plist */,
+			);
+			path = QiitaTestApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60421C901CFD3E1400FA057D /* QiitaTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60421CA31CFD3E1400FA057D /* Build configuration list for PBXNativeTarget "QiitaTestApp" */;
+			buildPhases = (
+				60421C8D1CFD3E1400FA057D /* Sources */,
+				60421C8E1CFD3E1400FA057D /* Frameworks */,
+				60421C8F1CFD3E1400FA057D /* Resources */,
+				60421CAA1CFD405D00FA057D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QiitaTestApp;
+			productName = QiitaTestApp;
+			productReference = 60421C911CFD3E1400FA057D /* QiitaTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60421C891CFD3E1400FA057D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Satoru Murakami";
+				TargetAttributes = {
+					60421C901CFD3E1400FA057D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 60421C8C1CFD3E1400FA057D /* Build configuration list for PBXProject "QiitaTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60421C881CFD3E1400FA057D;
+			productRefGroup = 60421C921CFD3E1400FA057D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60421C901CFD3E1400FA057D /* QiitaTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60421C8F1CFD3E1400FA057D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60421C9F1CFD3E1400FA057D /* LaunchScreen.storyboard in Resources */,
+				60421C9C1CFD3E1400FA057D /* Assets.xcassets in Resources */,
+				60421C9A1CFD3E1400FA057D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60421CAA1CFD405D00FA057D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60421C8D1CFD3E1400FA057D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60421C971CFD3E1400FA057D /* ViewController.swift in Sources */,
+				60421CAE1D0287D800FA057D /* QiitaData.swift in Sources */,
+				60421C951CFD3E1400FA057D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		60421C981CFD3E1400FA057D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60421C991CFD3E1400FA057D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60421C9D1CFD3E1400FA057D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60421C9E1CFD3E1400FA057D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60421CA11CFD3E1400FA057D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60421CA21CFD3E1400FA057D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60421CA41CFD3E1400FA057D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = QiitaTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.myapp.QiitaTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		60421CA51CFD3E1400FA057D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = QiitaTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.myapp.QiitaTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60421C8C1CFD3E1400FA057D /* Build configuration list for PBXProject "QiitaTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60421CA11CFD3E1400FA057D /* Debug */,
+				60421CA21CFD3E1400FA057D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60421CA31CFD3E1400FA057D /* Build configuration list for PBXNativeTarget "QiitaTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60421CA41CFD3E1400FA057D /* Debug */,
+				60421CA51CFD3E1400FA057D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60421C891CFD3E1400FA057D /* Project object */;
+}
