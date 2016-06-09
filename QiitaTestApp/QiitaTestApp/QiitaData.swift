@@ -100,9 +100,9 @@ func refresh_articles() -> [[String: String?]] {
 /**
  指定したタグに関する記事を取得して返す
  - parameter tag: タグの名前
- - return: 指定したタグの記事（最新記事40個
+ - return: 指定したタグの記事（最新記事40個)
  */
-func search_articles(tag:String) -> [[String: String?]]{
+func search_Articles(tag:String) -> [[String: String?]] {
     var keep:Bool = true
     var tag_articles: [[String: String?]] = []
     Alamofire.request(.GET, "https://qiita.com/api/v2/tags/"+tag+"/items?per_page=40")

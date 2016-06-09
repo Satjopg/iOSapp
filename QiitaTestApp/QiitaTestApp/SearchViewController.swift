@@ -21,6 +21,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tagTableView.delegate = self
         tagTableView.dataSource = self
         setupSearchBar()
+        add_BackBtn()
     }
     
     override func didReceiveMemoryWarning() {
@@ -71,6 +72,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
+//  セルをタップした時の処理
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//      セルのタグ情報を取得
+        let tag = tags[indexPath.row]
+        self.searchBar.text = tag["tag"]!
+//      セグエの呼び出し
+        performSegueWithIdentifier("searchResultSegue", sender: self.searchBar)
+    }
+    
 /* おしまい */
     
 //  画面遷移時の動作
@@ -79,6 +89,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if self.searchBar.text != "" {
             nextView.view_title = self.searchBar.text!
         }
+    }
+    
+//  遷移先に戻るボタンを追加する
+    func add_BackBtn() {
+//      戻るボタンの設定（遷移先に表示される）
+        let backbtn = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backbtn
     }
     
 }
