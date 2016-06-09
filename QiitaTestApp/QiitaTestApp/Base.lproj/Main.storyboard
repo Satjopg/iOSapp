@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZpR-L2-u7f">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="Kuk-Us-yuH"/>
@@ -133,7 +133,7 @@
                         <constraints>
                             <constraint firstItem="ZpR-L2-u7f" firstAttribute="leading" secondItem="2mh-EY-OLN" secondAttribute="leading" id="8K2-Dj-z3w"/>
                             <constraint firstItem="ZpR-L2-u7f" firstAttribute="top" secondItem="2mh-EY-OLN" secondAttribute="top" id="bXS-ke-hhV"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="ZpR-L2-u7f" secondAttribute="bottom" constant="-75" id="zok-7b-80W"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZpR-L2-u7f" secondAttribute="bottom" id="zok-7b-80W"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pQy-ha-Quz"/>
@@ -159,7 +159,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QYL-48-GfL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="698"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultCell" textLabel="fEq-LD-kaX" detailTextLabel="J96-gJ-nce" rowHeight="55" style="IBUITableViewCellStyleSubtitle" id="Kb1-0a-Vwf">
@@ -195,7 +195,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="QYL-48-GfL" secondAttribute="bottom" constant="-98" id="1nX-Na-xKo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="QYL-48-GfL" secondAttribute="bottom" id="1nX-Na-xKo"/>
                             <constraint firstItem="QYL-48-GfL" firstAttribute="leading" secondItem="w57-10-UfC" secondAttribute="leading" id="SEt-cm-Wff"/>
                             <constraint firstItem="QYL-48-GfL" firstAttribute="top" secondItem="w57-10-UfC" secondAttribute="top" id="THs-UC-85Y"/>
                             <constraint firstAttribute="trailing" secondItem="QYL-48-GfL" secondAttribute="trailing" id="pko-fS-opk"/>
