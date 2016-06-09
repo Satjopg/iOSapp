@@ -40,6 +40,10 @@ func getArticles() -> [[String: String?]] {
     return articles
 }
 
+/**
+ 投稿数の多いタグを返す
+ - return: 投稿数の多いタグ20個
+ */
 func getTags() -> [[String:String?]]{
 //  タグ一覧を保持する
     var tags:[[String:String?]] = []
@@ -58,7 +62,6 @@ func getTags() -> [[String:String?]]{
                 "tag":json_data["id"].string,
                 "count":count
             ]
-            print(tag["count"])
             tags.append(tag)
         }
         keep = false
@@ -94,6 +97,11 @@ func refresh_articles() -> [[String: String?]] {
     return ref_articles
 }
 
+/**
+ 指定したタグに関する記事を取得して返す
+ - parameter tag: タグの名前
+ - return: 指定したタグの記事（最新記事40個
+ */
 func search_articles(tag:String) -> [[String: String?]]{
     var keep:Bool = true
     var tag_articles: [[String: String?]] = []

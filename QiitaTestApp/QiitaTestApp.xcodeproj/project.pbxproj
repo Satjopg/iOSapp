@@ -16,6 +16,7 @@
 		60421CA91CFD3FFD00FA057D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60421CA71CFD3FFD00FA057D /* SwiftyJSON.framework */; };
 		60421CAE1D0287D800FA057D /* QiitaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60421CAD1D0287D800FA057D /* QiitaData.swift */; };
 		609EEAB61D09327600CD1860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609EEAB51D09327600CD1860 /* SearchViewController.swift */; };
+		609EEAB81D09673A00CD1860 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609EEAB71D09673A00CD1860 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		60421CA71CFD3FFD00FA057D /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		60421CAD1D0287D800FA057D /* QiitaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaData.swift; sourceTree = "<group>"; };
 		609EEAB51D09327600CD1860 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		609EEAB71D09673A00CD1860 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				60421C941CFD3E1400FA057D /* AppDelegate.swift */,
 				60421C961CFD3E1400FA057D /* ViewController.swift */,
 				609EEAB51D09327600CD1860 /* SearchViewController.swift */,
+				609EEAB71D09673A00CD1860 /* ResultViewController.swift */,
 				60421CAD1D0287D800FA057D /* QiitaData.swift */,
 				60421C981CFD3E1400FA057D /* Main.storyboard */,
 				60421C9B1CFD3E1400FA057D /* Assets.xcassets */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				609EEAB81D09673A00CD1860 /* ResultViewController.swift in Sources */,
 				60421C971CFD3E1400FA057D /* ViewController.swift in Sources */,
 				60421CAE1D0287D800FA057D /* QiitaData.swift in Sources */,
 				609EEAB61D09327600CD1860 /* SearchViewController.swift in Sources */,

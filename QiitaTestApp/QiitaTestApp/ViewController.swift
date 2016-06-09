@@ -32,8 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //      取得したデータを表示するために再描画
         self.qiitaView.reloadData()
         
+//      タグ一覧取得
         tags = getTags()
+//      遷移先に戻るボタンを追加
         add_BackBtn()
+//      記事更新機能を追加
         refresh_control()
 
     }
