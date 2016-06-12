@@ -17,6 +17,8 @@
 		60421CAE1D0287D800FA057D /* QiitaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60421CAD1D0287D800FA057D /* QiitaData.swift */; };
 		609EEAB61D09327600CD1860 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609EEAB51D09327600CD1860 /* SearchViewController.swift */; };
 		609EEAB81D09673A00CD1860 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609EEAB71D09673A00CD1860 /* ResultViewController.swift */; };
+		60A8A8E41D0C4390009F2641 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A8A8E31D0C4390009F2641 /* ArticleCell.swift */; };
+		60E959771D0D313E00C0C9B0 /* SearchArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E959761D0D313E00C0C9B0 /* SearchArticleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		60421CAD1D0287D800FA057D /* QiitaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QiitaData.swift; sourceTree = "<group>"; };
 		609EEAB51D09327600CD1860 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		609EEAB71D09673A00CD1860 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		60A8A8E31D0C4390009F2641 /* ArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		60E959761D0D313E00C0C9B0 /* SearchArticleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchArticleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +74,10 @@
 			children = (
 				60421C941CFD3E1400FA057D /* AppDelegate.swift */,
 				60421C961CFD3E1400FA057D /* ViewController.swift */,
+				60A8A8E31D0C4390009F2641 /* ArticleCell.swift */,
 				609EEAB51D09327600CD1860 /* SearchViewController.swift */,
 				609EEAB71D09673A00CD1860 /* ResultViewController.swift */,
+				60E959761D0D313E00C0C9B0 /* SearchArticleCell.swift */,
 				60421CAD1D0287D800FA057D /* QiitaData.swift */,
 				60421C981CFD3E1400FA057D /* Main.storyboard */,
 				60421C9B1CFD3E1400FA057D /* Assets.xcassets */,
@@ -174,7 +180,9 @@
 			files = (
 				609EEAB81D09673A00CD1860 /* ResultViewController.swift in Sources */,
 				60421C971CFD3E1400FA057D /* ViewController.swift in Sources */,
+				60A8A8E41D0C4390009F2641 /* ArticleCell.swift in Sources */,
 				60421CAE1D0287D800FA057D /* QiitaData.swift in Sources */,
+				60E959771D0D313E00C0C9B0 /* SearchArticleCell.swift in Sources */,
 				609EEAB61D09327600CD1860 /* SearchViewController.swift in Sources */,
 				60421C951CFD3E1400FA057D /* AppDelegate.swift in Sources */,
 			);

@@ -26,6 +26,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         qiitaView.delegate = self
         qiitaView.dataSource = self
+        
+//      セルの大きさを可変にする
+        qiitaView.estimatedRowHeight = 80
+        qiitaView.rowHeight = UITableViewAutomaticDimension
 
 //      最新の記事データを取得
         articles = getArticles()
@@ -98,10 +102,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 //  セルに表示する内容
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = qiitaView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let article = articles[indexPath.row]
-        cell.textLabel?.text = article["title"]!
-        cell.detailTextLabel?.text = article["userID"]!
+        let cell:ArticleCell = qiitaView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ArticleCell
+        let article = self.articles[indexPath.row]
+        let up_date = purse_date(article["date"]!!)
+        cell.article.text = article["title"]!
+        cell.userID.text = "@"+article["userID"]!!
+        cell.upDate.text = up_date
+        cell.layoutIfNeeded()
         return cell
     }
     
@@ -114,6 +121,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 /* おしまい */
+    
+//  日時の情報を見やすくするためにパースする
+    internal func purse_date(date:String) -> String{
+        return ((date as NSString).substringWithRange(NSMakeRange(5, 5))) + " " + ((date as NSString).substringWithRange(NSMakeRange(11, 5)))
+    }
+    
     
 //  画面遷移時の動作（今回は値の受け渡し）  
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

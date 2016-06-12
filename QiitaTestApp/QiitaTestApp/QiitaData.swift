@@ -25,6 +25,7 @@ func getArticles() -> [[String: String?]] {
                 json_data.forEach{ (_, json_data) in
                     let article: [String:String?] = [
                         "title":json_data["title"].string,
+                        "date":json_data["created_at"].string,
                         "userID":json_data["user"]["id"].string,
                         "url":json_data["url"].string
                     ]
@@ -115,7 +116,8 @@ func search_Articles(tag:String) -> [[String: String?]] {
                 let article: [String:String?] = [
                     "title":json_data["title"].string,
                     "userID":json_data["user"]["id"].string,
-                    "url":json_data["url"].string
+                    "url":json_data["url"].string,
+                    "date":json_data["created_at"].string
                 ]
                 tag_articles.append(article)
             }

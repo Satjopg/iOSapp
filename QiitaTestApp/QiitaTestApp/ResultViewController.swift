@@ -17,6 +17,8 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = self.view_title
+        self.searchResultTable.estimatedRowHeight = 80
+        self.searchResultTable.rowHeight = UITableViewAutomaticDimension
         self.tag_articles = search_Articles(view_title)
         self.searchResultTable.reloadData()
     }
@@ -33,10 +35,12 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
 //  セルに表示するもの等の設定
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.searchResultTable.dequeueReusableCellWithIdentifier("resultCell", forIndexPath: indexPath)
+        let cell:SearchArticleCell = self.searchResultTable.dequeueReusableCellWithIdentifier("resultCell", forIndexPath: indexPath) as! SearchArticleCell
         let article = self.tag_articles[indexPath.row]
-        cell.textLabel?.text = article["title"]!
-        cell.detailTextLabel?.text = article["userID"]!
+        let up_date = ViewController().purse_date(article["date"]!!)
+        cell.article.text = article["title"]!
+        cell.userID.text = article["userID"]!
+        cell.update.text = up_date
         return cell
     }
     
