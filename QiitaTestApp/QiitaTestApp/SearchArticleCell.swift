@@ -12,6 +12,8 @@ class SearchArticleCell: UITableViewCell {
     @IBOutlet weak var article: UILabel!
 
     @IBOutlet weak var update: UILabel!
+    
+    @IBOutlet weak var icon: UIImageView!
 
     @IBOutlet weak var userID: UILabel!
 }

@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var refreshControl:UIRefreshControl!
 //  タグを保持する
     var tags:[[String:String?]] = []
+//  一度ダウンロードした画像を保存しておく
+    var icon_Cache = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tags = getTags()
 //      遷移先に戻るボタンを追加
         add_BackBtn()
-//      記事更新機能を追加
-        refresh_control()
+//      記事更新機能を追加(うまくいかない...)
+//        refresh_control()
 
     }
     
@@ -105,6 +107,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell:ArticleCell = qiitaView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ArticleCell
         let article = self.articles[indexPath.row]
         let up_date = purse_date(article["date"]!!)
+        if icon_Cache.objectForKey(article["image"]!!) == nil {
+            let data:NSData = get_icon(article["image"]!!)
+            icon_Cache.setObject(data, forKey: article["image"]!!)
+        }
+        dispatch_async(dispatch_get_main_queue()) { () in
+            cell.icon.image = UIImage(data: self.icon_Cache.objectForKey(article["image"]!!) as! NSData)
+        }
         cell.article.text = article["title"]!
         cell.userID.text = "@"+article["userID"]!!
         cell.upDate.text = up_date

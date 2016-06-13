@@ -27,6 +27,7 @@ func getArticles() -> [[String: String?]] {
                         "title":json_data["title"].string,
                         "date":json_data["created_at"].string,
                         "userID":json_data["user"]["id"].string,
+                        "image":json_data["user"]["profile_image_url"].string,
                         "url":json_data["url"].string
                     ]
                     articles.append(article)
@@ -87,16 +88,41 @@ func refresh_articles() -> [[String: String?]] {
                 let article: [String:String?] = [
                     "title":json_data["title"].string,
                     "userID":json_data["user"]["id"].string,
+                    "image":json_data["user"]["profile_image_url"].string,
                     "url":json_data["url"].string
                 ]
                 ref_articles.append(article)
             }
             keep = false
     }
-    let runloop = NSRunLoop()
-    while keep && runloop.runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1)) {}
+    let runloop = NSRunLoop.currentRunLoop()
+    while keep && runloop.runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1)){
+    }
     return ref_articles
 }
+
+/**
+ 指定したURLに画像を取りにいく
+ - parameter url: 画像のURL
+ - return: 画像のデータ
+ */
+func get_icon(url:String) -> NSData {
+    var image:NSData?
+    var keep:Bool = true
+    Alamofire.request(.GET, url)
+    .responseData { responce in
+        guard let object = responce.result.value else {
+            return
+        }
+        image = NSData(data: object)
+        keep = false
+    }
+    let runloop = NSRunLoop.currentRunLoop()
+    while keep && runloop.runMode(NSDefaultRunLoopMode, beforeDate: NSDate(timeIntervalSinceNow: 0.1)){
+    }
+    return image!
+}
+
 
 /**
  指定したタグに関する記事を取得して返す
@@ -117,6 +143,7 @@ func search_Articles(tag:String) -> [[String: String?]] {
                     "title":json_data["title"].string,
                     "userID":json_data["user"]["id"].string,
                     "url":json_data["url"].string,
+                    "image":json_data["user"]["profile_image_url"].string,
                     "date":json_data["created_at"].string
                 ]
                 tag_articles.append(article)

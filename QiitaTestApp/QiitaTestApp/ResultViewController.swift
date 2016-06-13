@@ -12,6 +12,7 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var view_title:String = ""
     var tag_articles: [[String:String?]] = []
+    var icon_Cache = ViewController().icon_Cache
     @IBOutlet weak var searchResultTable: UITableView!
     
     override func viewDidLoad() {
@@ -38,6 +39,13 @@ class ResultViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell:SearchArticleCell = self.searchResultTable.dequeueReusableCellWithIdentifier("resultCell", forIndexPath: indexPath) as! SearchArticleCell
         let article = self.tag_articles[indexPath.row]
         let up_date = ViewController().purse_date(article["date"]!!)
+        if self.icon_Cache.objectForKey(article["image"]!!) == nil {
+            let data:NSData = get_icon(article["image"]!!)
+            self.icon_Cache.setObject(data, forKey: article["image"]!!)
+        }
+        dispatch_async(dispatch_get_main_queue()) { () in
+            cell.icon.image = UIImage(data: self.icon_Cache.objectForKey(article["image"]!!) as! NSData)
+        }
         cell.article.text = article["title"]!
         cell.userID.text = article["userID"]!
         cell.update.text = up_date

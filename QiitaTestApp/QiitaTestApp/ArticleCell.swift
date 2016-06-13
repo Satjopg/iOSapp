@@ -10,6 +10,8 @@ import UIKit
 
 class ArticleCell: UITableViewCell {
     
+    @IBOutlet weak var icon: UIImageView!
+    
     @IBOutlet weak var userID: UILabel!
 
     @IBOutlet weak var upDate: UILabel!
